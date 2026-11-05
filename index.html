@@ -534,7 +534,7 @@ const STATIONS = [["Лобня",32.22,5.84],
 /* Серая «краска» на ветках. GRAY — насколько ветки закрыты серым:
    0 — не видно, 1 — полностью серые. Стёртые участки (ластик)
    записываются в список ERASED сами — его руками не трогай. */
-const GRAY=0.7;
+const GRAY=0.78;
 const ERASED = [
 ];
 
@@ -634,7 +634,7 @@ function initGray(){
     if(mx-mn<=45)continue;
     const k=i>>2,x=(k%W)/W,y=Math.floor(k/W)/H;
     if(x>.78&&x<.92&&y>.05&&y<.16)continue;
-    const t=0.5*(0.3*r+0.59*gg+0.11*b)+95;
+    const t=0.4*(0.3*r+0.59*gg+0.11*b)+55;
     p[i]=r*(1-GRAY)+t*GRAY;p[i+1]=gg*(1-GRAY)+t*GRAY;p[i+2]=b*(1-GRAY)+t*GRAY;
   }
   g.putImageData(d,0,0);
